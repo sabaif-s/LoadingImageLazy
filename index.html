@@ -4,23 +4,92 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .back{
+            background-image: url('./images/back2-small-small.jpg');
+            background-position: center;
+            background-size: cover;
+            width: 50%;
+            height: 50%;
+        }
+        .back3{
+            background-image: url('./images/back2-small-small.jpg');
+            background-position: center;
+            background-size: cover;
+            width: 50%;
+            height: 50%;
+        }
+        .back4{
+            background-image: url('./images/back2-small-small.jpg');
+            background-position: center;
+            background-size: cover;
+            width: 50%;
+            height: 50%;
+        }
+        .back6{
+            background-image: url('./images/back2-small-small.jpg');
+            background-position: center;
+            background-size: cover;
+            width: 50%;
+            height: 50%;
+        }
+        .back5{
+            background-image: url('./images/back2-small-small.jpg');
+            background-position: center;
+            background-size: cover;
+            width: 50%;
+            height: 50%;
+        }
+        .back6{
+            background-image: url('./images/back2-small-small.jpg');
+            background-position: center;
+            background-size: cover;
+            width: 50%;
+            height: 50%;
+        }
+
+        img{
+            object-fit: cover;
+            display: block;
+        }
+    </style>
 </head>
+
 <body style="width: 100vw; overflow-x: hidden; " >
-    <img src="./images/back2.jpg" loading="lazy" style="width: 50%;" alt="">
-    <img src="./images/back3.jpg"  loading="lazy"  style="width: 50%;"    alt="">
-    <img src="./images/back4.jpg"  loading="lazy"    style="width: 50%;"     alt="">
-    <img src="./images/birthDay.png" loading="lazy"   style="width: 50%;"     alt="">
-    <img src="./images/footerBack.jpg" loading="lazy" style="width: 50%;"     alt="">
-    <img src="./images/htmlBack.jpg" loading="lazy"  style="width: 50%;"     alt="">
-    <img src="./images/webdev2.jpg" loading="lazy" style="width: 50%;"  alt="">
-    <img src="./images/webdevmob.jpg" loading="lazy" style="width: 50%;"  alt="">
-    <img src="./images/back2.jpg" loading="lazy" style="width: 50%;" alt="">
-    <img src="./images/back3.jpg"  loading="lazy"  style="width: 50%;"    alt="">
-    <img src="./images/back4.jpg"  loading="lazy"    style="width: 50%;"     alt="">
-    <img src="./images/birthDay.png" loading="lazy"   style="width: 50%;"     alt="">
-    <img src="./images/footerBack.jpg" loading="lazy" style="width: 50%;"     alt="">
-    <img src="./images/htmlBack.jpg" loading="lazy"  style="width: 50%;"     alt="">
-    <img src="./images/webdev2.jpg" loading="lazy" style="width: 50%;"  alt="">
-    <img src="./images/webdevmob.jpg" loading="lazy" style="width: 50%;"  alt="">
+    <div class="back" >
+        <img src="./images/back2.jpg"  loading="lazy" style="width: 100%; height: 100%;" alt="">
+    </div>
+    
+    <div class="back" >
+        <img src="./images/birthDay.png"  loading="lazy" style="width: 100%;" alt="">
+    </div>
+    <div class="back" >
+        <img src="./images/footerBack.jpg"  loading="lazy" style="width: 100%;" alt="">
+    </div>
+    <div class="back" >
+        <img src="./images/htmlBack.jpg"  loading="lazy" style="width: 100%;" alt="">
+    </div>
+    <div class="back" >
+        <img src="./images/back4.jpg"  loading="lazy" style="width: 100%;" alt="">
+    </div>
+    <div class="back" >
+        <img src="./images/back3.jpg"  loading="lazy" style="width: 100%;" alt="">
+    </div>
+    <script>
+        const divsBlurred=document.querySelectorAll('.back');
+        console.log(divsBlurred);
+        divsBlurred.forEach((div,index)=>{
+            const img=div.querySelector("img");
+            if(img.complete){
+                console.log(`image at ${index}  completed successfully`);
+            }
+            else {
+                img.addEventListener("onload",loaded(index));
+            }
+        })
+        function loaded(index){
+   console.log("image at sth loaded",index);
+        }
+    </script>
 </body>
 </html>
